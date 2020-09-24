@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input type="file" accept="image/*" id="pictureInput" capture="camera"> <!-- style="display: none;"> -->
+    <!-- <input type="button" value="Browse..." onclick="document.getElementById('pictureInput').click();" /> -->
+  </div>
+  <!-- <div>
+    Uploaded file -> <span id="fileName"></span>
+  </div> -->
+</body>
+<script>
+  document.querySelector("#pictureInput").addEventListener("change", (e) => {
+    if (e.currentTarget.files.length == 0) {
+      // document.querySelector("#fileName").textContent = "";
+      return false;
+    }
+    let file = e.currentTarget.files[0].name;
+    // document.querySelector("#fileName").textContent = file;
+  });
+</script>
+
+</html>
